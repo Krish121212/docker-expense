@@ -9,3 +9,6 @@ COPY package.json .
 COPY *.js .
 RUN npm install
 CMD [ "node","index.js" ]
+
+# create nework to create connection b/w all containers. bridge network
+# install mysql in backend too
