@@ -1,3 +1,5 @@
+# commands used: 'docker compose up -d' : 'docker compose down'
+
 name: expense
 networks: ## given at global level as we use it for all services
   default:
