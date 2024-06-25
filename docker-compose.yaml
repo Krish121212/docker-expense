@@ -4,10 +4,17 @@ name: expense
 networks: ## given at global level as we use it for all services
   default:
     name: expense
+volumes:
+  mysql:
+    #external: true # if true, you need to create manually
 services:
   mysql:
     image: mysql:v1.0
     container_name: mysql
+    volumes:
+    - source: mysql
+      target: /var/lib/mysql
+      type: volume # -v volume-name:/path/in/container
   backend:
     image: backend:v1.0
     container_name: backend
